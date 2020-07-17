@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTracker } from 'meteor/react-meteor-data';
+import { useTracker } from '@ledgy/react-meteor-data';
 import { LinksCollection } from '../api/links';
 
 export const Info = () => {

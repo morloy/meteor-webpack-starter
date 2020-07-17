@@ -1,17 +1,18 @@
 {
-  "name": "meteor-webpack",
+  "name": "meteor-webpack-starter",
   "private": true,
   "scripts": {
-    "start": "meteor run",
+    "start": "./scripts/dev.sh",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
     "visualize": "meteor --production --extra-packages bundle-visualizer"
   },
   "dependencies": {
     "@babel/runtime": "^7.8.4",
+    "@ledgy/react-meteor-data": "2.1.2",
     "meteor-node-stubs": "^1.0.0",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "16.13.1"
   },
   "meteor": {
     "mainModule": {
@@ -19,5 +20,19 @@
       "server": "server/main.js"
     },
     "testModule": "tests/main.js"
+  },
+  "devDependencies": {
+    "@babel/core": "7.10.5",
+    "@babel/preset-react": "7.10.4",
+    "@hot-loader/react-dom": "16.13.0",
+    "babel-loader": "8.1.0",
+    "css-loader": "3.6.0",
+    "html-webpack-plugin": "4.3.0",
+    "react-hot-loader": "4.12.21",
+    "style-loader": "1.2.1",
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0",
+    "webpack-meteor-externals": "0.0.5"
   }
 }

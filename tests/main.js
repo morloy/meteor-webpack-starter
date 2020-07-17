@@ -1,9 +1,9 @@
 import assert from "assert";
 
-describe("meteor-webpack", function () {
+describe("meteor-webpack-starter", function () {
   it("package.json has correct name", async function () {
     const { name } = await import("../package.json");
-    assert.strictEqual(name, "meteor-webpack");
+    assert.strictEqual(name, "meteor-webpack-starter");
   });
 
   if (Meteor.isClient) {

@@ -1,5 +1,8 @@
 import { Meteor } from 'meteor/meteor';
+import { WebAppInternals } from 'meteor/webapp';
 import { LinksCollection } from '/imports/api/links';
+
+WebAppInternals.setInlineScriptsAllowed(false);
 
 function insertLink({ title, url }) {
   LinksCollection.insert({title, url, createdAt: new Date()});
