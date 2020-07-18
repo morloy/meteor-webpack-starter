@@ -1,7 +1,7 @@
 # Meteor & Webpack
 
-This starter is a simplified version of how we utilize [Meteor](https://github.com/meteor/meteor) together with [webpack](https://github.com/webpack/webpack) at [Ledgy](https://ledgy.com).
-Using webpack for the client bundle gives us some features not yet available in native Meteor, such as:
+This starter is a simplified version of how we utilize [Meteor](https://github.com/meteor/meteor) and [webpack](https://github.com/webpack/webpack) together at [Ledgy](https://ledgy.com).
+Using webpack for the client bundle gives us access to some features not yet available in native Meteor, such as:
 
 * Source maps in production
 * Hot module replacement
@@ -15,14 +15,14 @@ The approach might seem very rough as of now, but so far works pretty well in pr
 
 ## Approach
 
-We launch the Meteor and webpack in `dev.sh`. The scripts creates a minimal client environment by in `.dev-server/` by combining the `.dev-server-skeleton/` folder and some Meteor files.
+We launch the Meteor and webpack in `dev.sh`. The script creates a minimal client environment by in `.dev-server/` by combining the `.dev-server-skeleton/` folder and some Meteor files.
 `webpack-dev-server` is launched on the usual port `3000` whereas the Meteor instance is moved to `4000`.
 
 Our webpack bundle simply exports a function as `window.run` that launches the client app. The Meteor client bundle is then reduced to single line calling `window.run()`.
 
 During development, we need some more magic from `devLoader.js` to re-export the Meteor runtime config in our webpack environment.
 
-This starter uses the forked `@ledgy/react-meteor-data` package from NPM. Since the Meteor version is not published on NPM, using it results in a duplicate React module: one from Meteor and one from webpack.
+This starter uses the forked [@ledgy/react-meteor-data](https://github.com/Ledgy/react-meteor-data) package from NPM. Since the Meteor package is not published on NPM, using it results in a duplicate React module: one from Meteor and one from webpack.
 
 
 ### Meteor packages
@@ -33,7 +33,7 @@ Package bundles are loaded in `.dev-server-skeleton/main.html`. Since the list i
 ## Production deployment
 
 A production bundle is created in two steps:
-1. Building the webpack bundle: `webpack -p`
-This builds the client bundle, places all files in the `public/` folder, and adds a reference to `main.html`.
-2. Building the Meteor app: `meteor build ${BUILD_DIR} --directory --server-only`
-Since all files are available in the `public/` folder, the Meteor build results in a fully functional bundle using the webpack output. 
+1. Building the webpack bundle: `webpack -p`\
+This builds the client bundle, places all files in the `public/` folder, and adds a reference to `main.html`
+2. Building the Meteor app: `meteor build ../ --directory --server-only`\
+Since all files are available in the `public/` folder, the Meteor build results in a fully functional bundle using the output from webpack
