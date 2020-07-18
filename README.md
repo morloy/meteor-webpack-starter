@@ -11,7 +11,7 @@ Using webpack for the client bundle gives us access to some features not yet ava
 
 Our approach launches both, Meteor and the `webpack-dev-server`. The dev server handles client rebuilds and HMR, whereas Meteor serves just the “backend”.
 
-The approach might seem very rough as of now, but so far works pretty well in production.
+The approach might seem very rough as of now, but so far works pretty well in production. The advantage is, that no modification to Meteor is required. The client bundle is simply hidden from Meteor and handled by webpack.
 
 ## Approach
 
