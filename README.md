@@ -22,6 +22,8 @@ Our webpack bundle simply exports a function as `window.run` that launches the c
 
 During development, we need some more magic from `devLoader.js` to re-export the Meteor runtime config in our webpack environment.
 
+This starter uses the forked `@ledgy/react-meteor-data` package from NPM. Since the Meteor version is not published on NPM, using it results in a duplicate React module: one from Meteor and one from webpack.
+
 
 ### Meteor packages
 
