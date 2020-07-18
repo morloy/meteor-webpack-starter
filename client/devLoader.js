@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 
-const initialize = async () => {
+const devLoader = async () => {
   const { PUBLIC_SETTINGS: settings } = JSON.parse(
     (await (await fetch('/meteor/meteor_runtime_config.js')).text()).slice(28, -1)
   );
@@ -8,4 +8,5 @@ const initialize = async () => {
   Meteor.settings.public = settings;
   window.run();
 };
-initialize();
+
+devLoader();

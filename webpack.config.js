@@ -9,7 +9,7 @@ const client = ({ isDevelopment }) => ({
   entry: [
     ...(isDevelopment ? ['react-hot-loader/patch'] : []),
     './client/main.css',
-    './client/run.js',
+    './client/main.jsx',
     ...(isDevelopment ? ['./client/devLoader.js'] : []),
   ],
   output: {

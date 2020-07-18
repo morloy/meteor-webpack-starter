@@ -1,4 +1,1 @@
-window.run = () => {
-  Tracker = Package.tracker.Tracker;
-  require('./main');
-};
+window.run();
